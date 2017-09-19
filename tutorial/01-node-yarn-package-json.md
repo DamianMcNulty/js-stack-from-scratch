@@ -1,44 +1,5 @@
 # 01 - Node, Yarn, and `package.json`
 
-Code for this chapter available [here](https://github.com/verekia/js-stack-walkthrough/tree/master/01-node-yarn-package-json).
-
-In this section we will set up Node, Yarn, a basic `package.json` file, and try a package.
-
-## Node
-
-> 💡 **[Node.js](https://nodejs.org/)** is a JavaScript runtime environment. It is mostly used for Back-End development, but also for general scripting. In the context of Front-End development, it can be used to perform a whole bunch of tasks like linting, testing, and assembling files.
-
-We will use Node for basically everything in this tutorial, so you're going to need it. Head to the [download page](https://nodejs.org/en/download/current/) for **macOS** or **Windows** binaries, or the [package manager installations page](https://nodejs.org/en/download/package-manager/) for Linux distributions.
-
-For instance, on **Ubuntu / Debian**, you would run the following commands to install Node:
-
-```sh
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
-
-You want any version of Node > 6.5.0.
-
-## Node Version Management Tools
-
-If you need the flexibility to use multiple versions of Node, check out [NVM](https://github.com/creationix/nvm) or [tj/n](https://github.com/tj/n).
-
-## NPM
-
-NPM is the default package manager for Node. It is automatically installed alongside with Node. Package managers are used to install and manage packages (modules of code that you or someone else wrote). We are going to use a lot of packages in this tutorial, but we'll use Yarn, another package manager.
-
-## Yarn
-
-> 💡 **[Yarn](https://yarnpkg.com/)** is a Node.js package manager which is much faster than NPM, has offline support, and fetches dependencies [more predictably](https://yarnpkg.com/en/docs/yarn-lock).
-
-Since it [came out](https://code.facebook.com/posts/1840075619545360) in October 2016, it received a very quick adoption and may soon become the package manager of choice of the JavaScript community. If you want to stick to NPM you can simply replace all `yarn add` and `yarn add --dev` commands of this tutorial by `npm install --save` and `npm install --save-dev`.
-
-Install Yarn by following the [instructions](https://yarnpkg.com/en/docs/install) for your OS. I would recommend using the **Installation Script** from the *Alternatives* tab if you are on macOS or Unix, to [avoid](https://github.com/yarnpkg/yarn/issues/1505) relying on other package managers:
-
-```sh
-curl -o- -L https://yarnpkg.com/install.sh | bash
-```
-
 ## `package.json`
 
 > 💡 **[package.json](https://yarnpkg.com/en/docs/package-json)** is the file used to describe and configure your JavaScript project. It contains general information (your project name, version, contributors, license, etc), configuration options for tools you use, and even a section to run *tasks*.
@@ -94,11 +55,8 @@ Running `node .` to execute our program is a bit too low-level. We are going to 
 - Create a `.gitignore` file and add the following to it:
 
 ```gitignore
-.DS_Store
 /*.log
 ```
-
-`.DS_Store` files are auto-generated macOS files that you should never have in your repository.
 
 `npm-debug.log` and `yarn-error.log` are files that are created when your package manager encounters an error, we don't want them versioned in our repository.
 
@@ -142,6 +100,4 @@ There are two kinds of package dependencies, `"dependencies"` and `"devDependenc
 
 **Dev Dependencies** are libraries used during development or to build your application (Webpack, SASS, linters, testing frameworks, etc). You install those with `yarn add --dev [package]`.
 
-Next section: [02 - Babel, ES6, ESLint, Flow, Jest, Husky](02-babel-es6-eslint-flow-jest-husky.md#readme)
-
-Back to the [table of contents](https://github.com/verekia/js-stack-from-scratch#table-of-contents).
+Back to the [table of contents](https://github.com/DamianMcNulty/js-stack-from-scratch#table-of-contents).
